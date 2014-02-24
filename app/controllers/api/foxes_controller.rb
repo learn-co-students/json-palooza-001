@@ -1,4 +1,4 @@
-class Api::FoxController < ApiController
+class Api::FoxesController < ApiController
   def index
     @foxes = Fox.all
 

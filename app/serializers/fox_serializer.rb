@@ -1,2 +1,2 @@
-class FoxesSerializer < ActiveModel::Serializer
+class FoxSerializer < ActiveModel::Serializer
 end
