@@ -10,6 +10,7 @@ JsonPalooza::Application.routes.draw do
   namespace :api, api_options  do
     resources :mooses, only: :show
     resources :foxes,  only: :show
+    resources :birds,  only: :index
   end
 
   # Example of regular route:

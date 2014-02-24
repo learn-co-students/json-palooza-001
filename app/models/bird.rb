@@ -1,3 +1,3 @@
 class Bird < ActiveRecord::Base
-  has_many :bird_sightings
+  has_many :sightings, foreign_key: :bird_id, class_name: 'BirdSighting'
 end
