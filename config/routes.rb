@@ -2,8 +2,14 @@ JsonPalooza::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  namespace :api, constraints: { format: :json } do
-    resources :mooses, defaults: { format: :json }
+  api_options = {
+    constraints: { format: :json },
+    defaults:    { format: :json }
+  }
+
+  namespace :api, api_options  do
+    resources :foxes,  only: :index
+    resources :mooses, only: :index
   end
 
   # Example of regular route:
