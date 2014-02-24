@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224162906) do
+ActiveRecord::Schema.define(version: 20140224181955) do
+
+  create_table "bird_sightings", force: true do |t|
+    t.datetime "sighted_at"
+    t.integer  "bird_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bird_sightings", ["bird_id"], name: "index_bird_sightings_on_bird_id"
+
+  create_table "birds", force: true do |t|
+    t.string   "name"
+    t.string   "species"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "foxes", force: true do |t|
     t.string   "name"
