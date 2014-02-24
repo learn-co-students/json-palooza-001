@@ -1,28 +1,25 @@
 require 'spec_helper'
 
 describe 'API' do
-  describe 'Moose index' do
+  describe 'Moose show' do
     # https://github.com/rails/jbuilder
     it 'renders a jbuilder template' do
-      get api_mooses_path
+      moose = create(:moose)
+      get api_moose_path(moose.id)
 
-      expect(response).to render_template(:index)
+      expect(response).to render_template(:show)
     end
 
     it 'generates a correctly structured JSON response' do
-      mooses = [create(:moose), create(:moose)]
+      moose = create(:moose)
 
-      get api_mooses_path
+      get api_moose_path(moose)
 
-      expect(JSON.parse(response.body)).to match_array(
-        mooses.map do |moose|
-          {
-            'name' => moose.name,
-            'variety' => moose.variety,
-            'coloration' => moose.coloration
-          }
-        end
-      )
+      expect(JSON.parse(response.body)).to eq({
+        'name' => moose.name,
+        'variety' => moose.variety,
+        'coloration' => moose.coloration
+      })
     end
   end
 end

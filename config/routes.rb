@@ -8,8 +8,8 @@ JsonPalooza::Application.routes.draw do
   }
 
   namespace :api, api_options  do
-    resources :foxes,  only: :index
-    resources :mooses, only: :index
+    resources :mooses, only: :show
+    resources :foxes,  only: :show
   end
 
   # Example of regular route:

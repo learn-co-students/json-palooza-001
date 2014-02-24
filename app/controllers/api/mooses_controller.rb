@@ -1,5 +1,5 @@
 class Api::MoosesController < ApiController
-  def index
-    @mooses = Moose.all
+  def show
+    @moose = Moose.find(params[:id])
   end
 end

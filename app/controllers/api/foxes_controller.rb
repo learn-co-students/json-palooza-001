@@ -1,7 +1,7 @@
 class Api::FoxesController < ApiController
-  def index
-    @foxes = Fox.all
+  def show
+    @fox = Fox.find(params[:id])
 
-    render json: @foxes
+    render json: @fox
   end
 end
