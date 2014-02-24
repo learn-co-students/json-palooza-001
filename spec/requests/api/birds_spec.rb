@@ -11,10 +11,10 @@ describe 'API' do
       7.times { create(:bird) }
 
       get api_birds_path(page: 1, per_page: 5)
-      expect(JSON.parse(response.body).count).to eq 5
+      expect(JSON.parse(response.body)['birds'].count).to eq 5
 
       get api_birds_path(page: 2, per_page: 5)
-      expect(JSON.parse(response.body).count).to eq 2
+      expect(JSON.parse(response.body)['birds'].count).to eq 2
     end
 
     it 'renders pagination data' do
@@ -31,15 +31,19 @@ describe 'API' do
 
       get api_birds_path(page: 1, per_page: 3)
 
-      expect(JSON.parse(response.body)).to match_array(birds.map do |bird|
+      expect(JSON.parse(response.body)).to eq({
+        'page' => 1,
+        'per_page' => 3,
+        'birds' => birds.slice(0,3).map do |bird|
         {
           'name' => bird.name,
           'species' => bird.species,
           'sightings' => bird.sightings.map do |sighting|
-            { 'sighted_at' => sighting.sighted_at }
+            { 'sighted_at' => sighting.sighted_at.to_i }
           end
         }
-      end)
+        end
+      })
     end
   end
 end

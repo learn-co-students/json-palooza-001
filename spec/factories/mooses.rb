@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :moose do
-    name Faker::Name.name
-    variety %w(North\ American Peruvian North\ Umbrian Andelucian).sample
-    coloration %w(perriwinkle brown chocolate cream).sample
+    name { Faker::Name.name }
+    variety { %w(North\ American Peruvian North\ Umbrian Andelucian).sample }
+    coloration { %w(perriwinkle brown chocolate cream).sample }
   end
 end

@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :bird do
-    name Faker::Name.name
-    species %w(Blue\ Jay Egret Redtail \Hawk Canary).sample
+    name { Faker::Name.name }
+    species { %w(Blue\ Jay Egret Redtail \Hawk Canary).sample }
 
     factory :sighted_bird do
       after(:create) do |bird|
