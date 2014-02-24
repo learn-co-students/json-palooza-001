@@ -47,6 +47,9 @@ GEM
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -124,6 +127,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   jbuilder (~> 1.2)
+  kaminari
   pry
   rails (= 4.0.2)
   rspec-rails
