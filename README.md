@@ -1,6 +1,6 @@
 ---
   tags: jbuilder, active model serializer, json, api, rails
-  languages:
+  languages: ruby
 ---
 
 # JSON Palooza
