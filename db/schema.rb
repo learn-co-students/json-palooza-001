@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224181955) do
+ActiveRecord::Schema.define(version: 20140224203547) do
 
   create_table "bird_sightings", force: true do |t|
     t.datetime "sighted_at"
@@ -42,6 +42,22 @@ ActiveRecord::Schema.define(version: 20140224181955) do
     t.string   "name"
     t.string   "variety"
     t.string   "coloration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wolf_blood_samples", force: true do |t|
+    t.integer  "wolf_id"
+    t.datetime "taken_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wolf_blood_samples", ["wolf_id"], name: "index_wolf_blood_samples_on_wolf_id"
+
+  create_table "wolves", force: true do |t|
+    t.string   "name"
+    t.string   "species"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

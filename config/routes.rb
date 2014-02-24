@@ -11,6 +11,7 @@ JsonPalooza::Application.routes.draw do
     resources :mooses, only: :show
     resources :foxes,  only: :show
     resources :birds,  only: :index
+    resources :wolves, only: :index
   end
 
   # Example of regular route:
