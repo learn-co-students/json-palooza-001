@@ -23,3 +23,4 @@ ActiveModel::Serializers to generate the specified JSON responses.
   - Wolves
 
 Get the tests to pass!
+
