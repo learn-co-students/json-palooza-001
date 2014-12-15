@@ -1,19 +1,20 @@
 require 'spec_helper'
 
-describe 'API' do
+describe Api::BirdsController, type: :request do
   describe 'Birds index' do
     it 'uses a jbuilder template' do
-      get api_birds_path
+      get api_birds_path, render: :json
       expect(response).to render_template(:index)
     end
 
     it 'paginates the results' do
       7.times { create(:bird) }
-
       get api_birds_path(page: 1, per_page: 5)
+
       expect(JSON.parse(response.body)['birds'].count).to eq 5
 
       get api_birds_path(page: 2, per_page: 5)
+
       expect(JSON.parse(response.body)['birds'].count).to eq 2
     end
 
