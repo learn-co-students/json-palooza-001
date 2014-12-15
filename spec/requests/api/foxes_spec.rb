@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'API' do
+describe Api::FoxesController, type: :request do
   describe 'Fox show' do
     # https://github.com/rails-api/active_model_serializers
     it 'uses an ActiveModel Serializer' do

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'API' do
+describe Api::WolvesController, type: :request do
   describe 'Wolf index' do
     it 'uses an ActiveModel Serializer' do
       get api_wolves_path

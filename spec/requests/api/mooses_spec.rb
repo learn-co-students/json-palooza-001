@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'API' do
+describe Api::MoosesController, type: :request do
   describe 'Moose show' do
     # https://github.com/rails/jbuilder
     it 'renders a jbuilder template' do
