@@ -1,4 +1,4 @@
-class Api::WolvesController < ApplicationController
+class Api::WolvesController < ApiController
   def index
     page = params[:page].to_i
     page = 1 unless page > 0
