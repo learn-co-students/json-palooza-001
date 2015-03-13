@@ -6,7 +6,7 @@ class CreateFoxes < ActiveRecord::Migration
       t.string :coloration
       t.string :saying
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

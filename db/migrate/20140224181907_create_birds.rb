@@ -4,7 +4,7 @@ class CreateBirds < ActiveRecord::Migration
       t.string :name
       t.string :species
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

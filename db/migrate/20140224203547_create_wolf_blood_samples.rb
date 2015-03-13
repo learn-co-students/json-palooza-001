@@ -4,7 +4,7 @@ class CreateWolfBloodSamples < ActiveRecord::Migration
       t.integer :wolf_id
       t.datetime :taken_at
 
-      t.timestamps
+      t.timestamps null: false
     end
     add_index :wolf_blood_samples, :wolf_id
   end
