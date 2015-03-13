@@ -5,7 +5,7 @@ class CreateMooses < ActiveRecord::Migration
       t.string :variety
       t.string :coloration
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

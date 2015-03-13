@@ -4,7 +4,7 @@ class CreateBirdSightings < ActiveRecord::Migration
       t.datetime :sighted_at
       t.integer :bird_id
 
-      t.timestamps
+      t.timestamps null: false
     end
     add_index :bird_sightings, :bird_id
   end
