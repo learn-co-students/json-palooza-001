@@ -8,6 +8,6 @@ class Api::WolvesController < ApiController
 
     wolves = Wolf.page(page).per(per_page)
 
-    render json: wolves
+    render json: wolves, meta: {page: page, per_page: per_page}
   end
 end

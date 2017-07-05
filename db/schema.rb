@@ -13,53 +13,53 @@
 
 ActiveRecord::Schema.define(version: 20140224203547) do
 
-  create_table "bird_sightings", force: true do |t|
+  create_table "bird_sightings", force: :cascade do |t|
     t.datetime "sighted_at"
     t.integer  "bird_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "bird_sightings", ["bird_id"], name: "index_bird_sightings_on_bird_id"
 
-  create_table "birds", force: true do |t|
+  create_table "birds", force: :cascade do |t|
     t.string   "name"
     t.string   "species"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "foxes", force: true do |t|
+  create_table "foxes", force: :cascade do |t|
     t.string   "name"
     t.string   "variety"
     t.string   "coloration"
     t.string   "saying"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "mooses", force: true do |t|
+  create_table "mooses", force: :cascade do |t|
     t.string   "name"
     t.string   "variety"
     t.string   "coloration"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "wolf_blood_samples", force: true do |t|
+  create_table "wolf_blood_samples", force: :cascade do |t|
     t.integer  "wolf_id"
     t.datetime "taken_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "wolf_blood_samples", ["wolf_id"], name: "index_wolf_blood_samples_on_wolf_id"
 
-  create_table "wolves", force: true do |t|
+  create_table "wolves", force: :cascade do |t|
     t.string   "name"
     t.string   "species"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
